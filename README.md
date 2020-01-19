@@ -2,10 +2,10 @@
 There are 4 assignments.
 
 # 1-SuperSario
-Creating & Moving
+- Creating & Moving
 # 2-ShootingRange
-Hitting the Target
+- Hitting the Target
 # 3-BattleTank
-Angular Firing
+- Angular Firing
 # 4-ArrowLamp
-Chasing and Lighting Simulation using Trigonometry and Vector Algebra
+- Chasing and Lighting Simulation using Trigonometry and Vector Algebra
