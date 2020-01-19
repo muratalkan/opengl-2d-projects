@@ -1,2 +1,1 @@
-# OpenGL
-CTIS-164 Assignments
+# OpenGL-CTIS 164 Assignments
