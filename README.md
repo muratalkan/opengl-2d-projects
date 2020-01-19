@@ -2,7 +2,7 @@
 There are 4 assignments.
 
 # 1-SuperSario
-Creating Character
+Creating & Moving
 # 2-ShootingRange
 Hitting the Target
 # 3-BattleTank
