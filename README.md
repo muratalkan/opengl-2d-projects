@@ -8,4 +8,4 @@ There are 4 assignments.
 # 3-BattleTank
 - Angular Firing
 # 4-ArrowLamp
-- Chasing and Lighting Simulation using Trigonometry and Vector Algebra
+- Chasing and Lighting Simulation
