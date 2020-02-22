@@ -1,4 +1,4 @@
-﻿#include <GL/glut.h>
+#include <GL/glut.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -76,7 +76,7 @@ void circle(int x, int y, int r)
 	glBegin(GL_POLYGON);
 	for (int i = 0; i < 100; i++)
 	{
-		angle = 2 * PI*i / 100;
+		angle = 2 * PI * i / 100;
 		glVertex2f(x + r * cos(angle), y + r * sin(angle));
 	}
 	glEnd();
@@ -88,13 +88,13 @@ void circle_wire(int x, int y, int r)
 	glBegin(GL_LINE_LOOP);
 	for (int i = 0; i < 100; i++)
 	{
-		angle = 2 * PI*i / 100;
+		angle = 2 * PI * i / 100;
 		glVertex2f(x + r * cos(angle), y + r * sin(angle));
 	}
 	glEnd();
 }
 
-void vprint(int x, int y, void *font, const char *string, ...)
+void vprint(int x, int y, void* font, const char* string, ...)
 {
 	va_list ap;
 	va_start(ap, string);
@@ -111,7 +111,7 @@ void vprint(int x, int y, void *font, const char *string, ...)
 	}
 }
 
-void vprint2(int x, int y, float size, const char *string, ...) {
+void vprint2(int x, int y, float size, const char* string, ...) {
 	va_list ap;
 	va_start(ap, string);
 	char str[1024];
@@ -330,7 +330,7 @@ void showOver() {
 	glEnd();
 
 	//////////////// RETRY BUTTON //////////////////////
-	
+
 	glColor3ub(buttonS.col[4].r, buttonS.col[4].g, buttonS.col[4].b); glRectf(-70, -70, 70, -130);
 
 	glLineWidth(3);
@@ -440,18 +440,18 @@ void draw_Arrow() {
 	glColor3f(ARROW.col[0].r, ARROW.col[0].g, ARROW.col[0].b);// GREEN - ORANGE
 	glBegin(GL_QUADS);
 	glVertex2f(ARROW.pos.x + 60 * cos((ARROW.angle + 360) * (PI / 180)), ARROW.pos.y + 60 * sin((ARROW.angle + 360) * (PI / 180)));
-	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 260)  * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 260)  * (PI / 180)));
+	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 260) * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 260) * (PI / 180)));
 	glVertex2f(ARROW.pos.x + 12 * cos((ARROW.angle + 180) * (PI / 180)), ARROW.pos.y + 12 * sin((ARROW.angle + 180) * (PI / 180)));
-	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 100)  * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 100)  * (PI / 180)));
+	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 100) * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 100) * (PI / 180)));
 	glEnd();
 
 	glLineWidth(4);
 	glColor3f(ARROW.col[1].r, ARROW.col[1].g, ARROW.col[1].b); // GREEN/BLACK - ORANGE/WHITE
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(ARROW.pos.x + 60 * cos((ARROW.angle + 360)  * (PI / 180)), ARROW.pos.y + 60 * sin((ARROW.angle + 360)  * (PI / 180)));
-	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 260)   * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 260)   * (PI / 180)));
-	glVertex2f(ARROW.pos.x + 17 * cos((ARROW.angle + 180)  * (PI / 180)), ARROW.pos.y + 17 * sin((ARROW.angle + 180)  * (PI / 180)));
-	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 100)   * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 100)   * (PI / 180)));
+	glVertex2f(ARROW.pos.x + 60 * cos((ARROW.angle + 360) * (PI / 180)), ARROW.pos.y + 60 * sin((ARROW.angle + 360) * (PI / 180)));
+	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 260) * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 260) * (PI / 180)));
+	glVertex2f(ARROW.pos.x + 17 * cos((ARROW.angle + 180) * (PI / 180)), ARROW.pos.y + 17 * sin((ARROW.angle + 180) * (PI / 180)));
+	glVertex2f(ARROW.pos.x + 8 * cos((ARROW.angle + 100) * (PI / 180)), ARROW.pos.y + 8 * sin((ARROW.angle + 100) * (PI / 180)));
 	glEnd();
 
 }
@@ -487,7 +487,7 @@ void showRun() {
 
 void display() {
 
-		checkButtons(); // mouse support
+	checkButtons(); // mouse support
 
 	switch (State) {
 	case LOGO:    showLogo(); break;
@@ -519,7 +519,7 @@ void onSpecialKeyDown(int key, int x, int y)
 		State = LOAD;
 	if (key == GLUT_KEY_F1 && State == RUN && resume && gameState)
 		resume = 0;
-	else if (key == GLUT_KEY_F1 && State == RUN && !resume  && gameState)
+	else if (key == GLUT_KEY_F1 && State == RUN && !resume && gameState)
 		resume = 1;
 
 	switch (key) { //adjust brightnessLevel
@@ -542,7 +542,9 @@ void onClick(int button, int stat, int x, int y)
 	if (button == GLUT_LEFT_BUTTON && stat == GLUT_DOWN) {
 		if (State == MENU) {
 			if (buttonS.status[0] == true) // START
-				{Init_Globals(); State = LOAD;}
+			{
+				Init_Globals(); State = LOAD;
+			}
 			else if (buttonS.status[1] == true) // CREDITS
 				State = CREDITS;
 			else if (buttonS.status[2] == true) // EXIT
@@ -551,7 +553,9 @@ void onClick(int button, int stat, int x, int y)
 
 		if (State == CREDITS || State == OVER) {
 			if (buttonS.status[3] == true)  // EXIT
-			{Init_Globals(); State = MENU;}
+			{
+				Init_Globals(); State = MENU;
+			}
 			if (State == OVER && buttonS.status[4] == true)  //RETRY
 				State = LOAD;
 		}
@@ -567,7 +571,7 @@ void onClick(int button, int stat, int x, int y)
 	if (button == GLUT_RIGHT_BUTTON && stat == GLUT_DOWN && resume && State == RUN) { //switch on the light
 		if (!gameState) { //initial switching
 			gameState = true; LAMP.status = true;
-			strcpy(LAMP.light, "ON");
+			strcpy_s(LAMP.light, "ON");
 			if (yellowCol)
 				LAMP.col = { 1,1,0 };
 			else
@@ -575,7 +579,7 @@ void onClick(int button, int stat, int x, int y)
 		}
 		if (!LAMP.status) { // switching after the hit
 			gameState = true; LAMP.status = true;
-			strcpy(LAMP.light, "ON");
+			strcpy_s(LAMP.light, "ON");
 			LAMP.brightness[1] = brTemp;
 			if (yellowCol)
 				LAMP.col = { 1,1,0 };
@@ -603,7 +607,7 @@ void gameCalculations() {
 		ARROW.pos.y += 5 * sin((ARROW.angle) * (PI / 180));
 
 		//Lamp Cal.
-		float temp = ((sin((PI / 180)*k) * 52 + 270)*(PI / 180)); //( 270 is default )
+		float temp = ((sin((PI / 180) * k) * 52 + 270) * (PI / 180)); //( 270 is default )
 		LAMP.pos.x = cos(temp) * 270.0;
 		LAMP.pos.y = 270.0 + (sin(temp) * 270.0);
 
@@ -623,7 +627,7 @@ void collision() {
 			LAMP.status = false;	ARROW.status = false;
 			lampCount++;
 			LAMP.brightness[1] = 0;
-			strcpy(LAMP.light, "OFF");
+			strcpy_s(LAMP.light, "OFF");
 		}
 		else if (hitX > LAMP.pos.x - 15 && hitX < LAMP.pos.x + 15 && hitY < LAMP.pos.y + 65 && hitY > LAMP.pos.y + 35) { // orangeArrow
 			ARROW.col[0] = { 0.9,0.4,0 };		ARROW.col[1] = { 0.85,0.85,0.85 };
@@ -702,7 +706,7 @@ void Init() {
 	Init_Globals();
 }
 
-void main(int argc, char *argv[]) {
+void main(int argc, char* argv[]) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
