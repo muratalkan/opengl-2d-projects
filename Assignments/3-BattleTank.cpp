@@ -708,9 +708,9 @@ void gameCalculations() {
 	}
 
 	switch (diffLevel) {
-	case 1: strcpy(difficulty, "EASY"); strcpy(diff_Range, "[0-9]"); break;
-	case 2: strcpy(difficulty, "NORMAL"); strcpy(diff_Range, "[10-49]"); break;
-	case 3: strcpy(difficulty, "HARD"); strcpy(diff_Range, "[50-99]"); break;
+	case 1: strcpy_s(difficulty, "EASY"); strcpy_s(diff_Range, "[0-9]"); break;
+	case 2: strcpy_s(difficulty, "NORMAL"); strcpy_s(diff_Range, "[10-49]"); break;
+	case 3: strcpy_s(difficulty, "HARD"); strcpy_s(diff_Range, "[50-99]"); break;
 	}
 }
 
