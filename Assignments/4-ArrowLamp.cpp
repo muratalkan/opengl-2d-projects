@@ -139,7 +139,7 @@ void Init_Globals() {
 	LAMP = { { 0, 0 }, {0,0,0}, false, {0} };
 	buttonS = { {{0,0,255},{0,0,255}, {0,0,255}, { 100,100,100 } }, {{false},{false},{false},{false} } };
 
-	strcpy(LAMP.light, "OFF");
+	strcpy_s(LAMP.light, "OFF");
 	LAMP.brightness[1] = brTemp; // initial value is 3
 
 	winWidth = we;
