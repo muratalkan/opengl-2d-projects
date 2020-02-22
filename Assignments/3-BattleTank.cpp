@@ -201,7 +201,7 @@ void showMenu() {
 
 	glColor3f(1, 1, 0);
 	glLineWidth(3);
-	vprint2(-105, 100, 0.3, "Tank Battle");
+	vprint2(-105, 100, 0.3, "BattleTank");
 
 	glBegin(GL_LINES);
 	glVertex2f(-80, 80);
