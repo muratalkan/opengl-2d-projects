@@ -1,5 +1,5 @@
 # OpenGL 2D Projects
-CTIS164 - Projects
+> CTIS164 - Projects
 
 You need to install **glut** and **vec.h/vec.cpp** to run these projects.
 
